@@ -15,13 +15,14 @@ function randomInt() {
   return Math.floor(Math.random() * 2);
 }
 
+const iterations = 1000;
+const target = 20;
 let countA = 0;
 let countB = 0;
 let totalCount = 0;
-let totalIterations = 0;
 
-for (let i = 0; i < 1000; i++) {
-  while (countA < 20 && countB < 20) {
+for (let i = 0; i < iterations; i++) {
+  while (countA < target && countB < target) {
     if (randomInt() === 0) {
       countA++;
     } else {
@@ -31,12 +32,12 @@ for (let i = 0; i < 1000; i++) {
   totalCount += countA + countB;
   countA = 0;
   countB = 0;
-  totalIterations++;
 }
 
-let totalAverage = totalCount / totalIterations;
+let totalAverage = totalCount / iterations;
 
 console.log(`Total of countA: ${countA}`);
 console.log(`Total of countB: ${countB}`);
 console.log(`Total average: ${totalAverage}`);
 */
+
